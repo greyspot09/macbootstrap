@@ -2,11 +2,11 @@ source basic.sh
 
 # Homebrew
 # ---------------
-brew cask install sogouinput
-sogou_base="/usr/local/Caskroom/sogouinput"
-sogou_version="$sogou_base/"`ls "$sogou_base"`
-sogou_app="$sogou_version/"`ls $sogou_version | grep .app | tail -n 1`
-open "$sogou_app"
+#brew cask install sogouinput
+#sogou_base="/usr/local/Caskroom/sogouinput"
+#sogou_version="$sogou_base/"`ls "$sogou_base"`
+#sogou_app="$sogou_version/"`ls $sogou_version | grep .app | tail -n 1`
+#open "$sogou_app"
 
 # Extension for preview
 brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json webpquicklook provisionql quicklookapk
@@ -52,14 +52,27 @@ else
 
     # patch alfred
     brew cask install alfred
-    sudo codesign -f -d -s - "/Applications/Alfred 3.app/Contents/Frameworks/Alfred Framework.framework/Versions/A/Alfred Framework"
-    cp tools/alfred.license.plist "$HOME/Library/Application Support/Alfred 3/license.plist"
+    #sudo codesign -f -d -s - "/Applications/Alfred 3.app/Contents/Frameworks/Alfred Framework.framework/Versions/A/Alfred Framework"
+    #cp tools/alfred.license.plist "$HOME/Library/Application Support/Alfred 3/license.plist"
 
-    # sync configuration
-    rm -rf "$HOME/Library/Application Support/Alfred 3/Alfred.alfredpreferences"
-    curl http://p2w4johvr.bkt.clouddn.com/Alfred.alfredpreferences2.zip -o "$HOME/Downloads/Alfred.alfredpreferences.zip"
-    unzip -q "$HOME/Downloads/Alfred.alfredpreferences.zip" -d "$HOME/Library/Application Support/Alfred 3"
-    rm "$HOME/Downloads/Alfred.alfredpreferences.zip"
+    ## sync configuration
+    #rm -rf "$HOME/Library/Application Support/Alfred 3/Alfred.alfredpreferences"
+    #curl http://p2w4johvr.bkt.clouddn.com/Alfred.alfredpreferences2.zip -o "$HOME/Downloads/Alfred.alfredpreferences.zip"
+    #unzip -q "$HOME/Downloads/Alfred.alfredpreferences.zip" -d "$HOME/Library/Application Support/Alfred 3"
+    #rm "$HOME/Downloads/Alfred.alfredpreferences.zip"
+fi
+
+
+if [[ ! -e /Applications/Xee³.app ]]; then
+    brew cask install xee
+else
+    echo "You have installed xee"
+fi
+
+if [[ ! -e /Applications/Dropbox.app/ ]]; then
+    brew cask install dropbox
+else
+    echo "You have installed dropbbox"
 fi
 
 ##################################################
@@ -69,12 +82,12 @@ fi
 #                                                #
 #                                                #
 ##################################################
-brew cask install proxifier
-open /Applications/Proxifier.app
-
-defaults write com.initex.proxifier.macosx.plist LicenseOwner -string "bestswifter"
-defaults write com.initex.proxifier.macosx.plist LicenseKey -string "P427L-9Y552-5433E-8DSR3-58Z68"
-bs_cp config/bs_aotu_fq.ppx "$HOME/Library/Application Support/Proxifier/Profiles/"
+#brew cask install proxifier
+#open /Applications/Proxifier.app
+#
+#defaults write com.initex.proxifier.macosx.plist LicenseOwner -string "bestswifter"
+#defaults write com.initex.proxifier.macosx.plist LicenseKey -string "P427L-9Y552-5433E-8DSR3-58Z68"
+#bs_cp config/bs_aotu_fq.ppx "$HOME/Library/Application Support/Proxifier/Profiles/"
 
 # Powerline-font
 # ---------------
@@ -86,24 +99,24 @@ rm -rf fonts
 
 # Python
 # ---------------
-pip3 install --trusted-host pypi.python.org neovim jedi ipython
-pip3 install --user --upgrade --trusted-host pypi.python.org PyYAML
+#pip3 install --trusted-host pypi.python.org neovim jedi ipython
+#pip3 install --user --upgrade --trusted-host pypi.python.org PyYAML
 
 # Gem update
-sudo gem update --system 2.7.6
-sudo gem install -n /usr/local/bin cocoapods
-sudo gem install -n /usr/local/bin cocoapods-plugins
-sudo gem install colored
+#sudo gem update --system 2.7.6
+#sudo gem install -n /usr/local/bin cocoapods
+#sudo gem install -n /usr/local/bin cocoapods-plugins
+#sudo gem install colored
 
 # nvm & npm install
-if [[ ! -d $HOME/.nvm ]]; then
-    mkdir $HOME/.nvm
-fi
-export NVM_DIR="$HOME/.nvm"
-source $(brew --prefix nvm)/nvm.sh
-export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node
-nvm install 9.11.0
-./install-steps/node_global.sh
+#if [[ ! -d $HOME/.nvm ]]; then
+    #mkdir $HOME/.nvm
+#fi
+#export NVM_DIR="$HOME/.nvm"
+#source $(brew --prefix nvm)/nvm.sh
+#export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node
+#nvm install 9.11.0
+#./install-steps/node_global.sh
 
-# hook login
+## hook login
 ./install-steps/hook_login.sh

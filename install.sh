@@ -1,18 +1,18 @@
 #!/bin/sh
 source basic.sh
 
-sudo ./install-steps/macos.sh
+#sudo ./install-steps/macos.sh
 
-brew install python3
-pip3 install shadowsocks
+#brew install python3
+#pip3 install shadowsocks
 
 # install and use shadowsocks
-if not_tt_network; then
-    nohup sslocal -q -c ~/.macbootstrap/tools/netconf &> /private/tmp/nohup.out&
-    export ALL_PROXY=socks5://127.0.0.1:14179
-else
-    echo "You are in toutiao network, no need to use ss now"
-fi
+#if not_tt_network; then
+#    nohup sslocal -q -c ~/.macbootstrap/tools/netconf &> /private/tmp/nohup.out&
+#    export ALL_PROXY=socks5://127.0.0.1:14179
+#else
+#    echo "You are in toutiao network, no need to use ss now"
+#fi
 
 if [[ ! -e /Applications/iTerm.app ]]; then
     brew cask install iterm2
@@ -25,6 +25,7 @@ if [[ ! -e /Applications/iTerm.app ]]; then
 else
     echo "You have installed iTerm2"
 fi
+
 
 if [[ ! -e /Applications/SourceTree.app ]]; then
     brew cask install sourcetree
@@ -40,22 +41,49 @@ fi
 
 if [[ ! -e /Applications/Google\ Chrome.app ]]; then
     brew cask install google-chrome
-
     # Set Chrome as default browser
-    git clone https://github.com/kerma/defaultbrowser ./tools/defaultbrowser
-    (cd ./tools/defaultbrowser && make && make install)
-    defaultbrowser chrome
-    [[ -d ./tools/defaultbrowser ]] && rm -rf ./tools/defaultbrowser
+    #git clone https://github.com/kerma/defaultbrowser ./tools/defaultbrowser
+    #$(cd ./tools/defaultbrowser && make && make install)
+    #defaultbrowser chrome
+    #[[ -d ./tools/defaultbrowser ]] && rm -rf ./tools/defaultbrowser
 else
     echo "You have installed chrome"
 fi
 
 if [[ ! -e /Applications/Visual\ Studio\ Code.app ]]; then
     brew cask install visual-studio-code
-    sh ./vscode/setup.sh
+    # 使用 setting sync 扩展来同步vscode配置等
+    #sh ./vscode/setup.sh
 else
     echo "You have installed vscode"
 fi
+
+
+if [[ ! -e /Applications/Xee³.app ]]; then
+    brew cask install xee
+else
+    echo "You have installed xee"
+fi
+
+if [[ ! -e /Applications/Dropbox.app/ ]]; then
+    brew cask install dropbox
+else
+    echo "You have installed dropbbox"
+fi
+
+
+
+# CodeRunner
+# ---------------
+if [[ ! -e /Applications/CodeRunner.app/ ]]; then
+    brew cask install coderunner
+else
+    echo "You have installed coderunner"
+fi
+
+
+
+
 
 if brew ls --versions gnu-sed > /dev/null; then
     echo "You have installed gsed"
@@ -63,7 +91,7 @@ else
     brew install gnu-sed
 fi
 
-# install coreutils
+ install coreutils
 if [[ ! -e /usr/local/opt/coreutils ]]; then
     brew install coreutils
     mv /usr/local/opt/coreutils/libexec/gnubin/ls /usr/local/opt/coreutils/libexec/gnubin/gls
@@ -72,34 +100,36 @@ else
 fi
 
 brew install --HEAD universal-ctags/universal-ctags/universal-ctags
-brew install redis
+#brew install redis
 brew_install cmake
-brew_install gawk
+#brew_install gawk
 brew_install autojump
 brew_install wget
-brew_install nvm
-brew_install exiv2
+#brew_install nve
+brew_install exiv2                  #
 brew_install ssh-copy-id
-brew_install imagemagick
+brew_install imagemagick            #命令行图片处理
 brew_install catimg
-brew_install gpg
+#brew_install gpg
 brew_install icdiff
-brew_install scmpuff
-brew_install fzf
-brew_install fd
-brew_install the_silver_searcher
+brew_install scmpuff                #git 扩展
+#brew_install fzf
+brew_install fd                     #文件索索工具， 可以替代find
+brew_install the_silver_searcher    #文本搜索工具， 可以替代grep
 brew_install nvim
 brew_install exiftool
-brew_install archey
-brew_install ranger
-brew_install git-lfs
-$(brew --prefix)/opt/fzf/install --all
+brew_install archey                 #显示系统信息
+brew_install ranger                 #终端的文件管理器，客替换Finder
+#brew_install git-lfs
+brew_install libimobiledevice
+#$(brew --prefix)/opt/fzf/install --all
 
 # link git config
 mv ~/.gitconfig ~/.gitconfig_backup
 backup_file ~/.gitattributes
 ln -s ~/.macbootstrap/git-config/.gitconfig ~/.gitconfig
 ln -s ~/.macbootstrap/git-config/.gitattributes ~/.gitattributes
+
 
 if [[ ! -e ~/.oh-my-zsh ]]; then
     curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
@@ -118,9 +148,9 @@ git clone https://github.com/bestswifter/vim-config.git ~/.config/nvim
 ln -s ~/.config/nvim ~/.vim
 
 # ESLint configuration
-backup_file ~/.eslintrc.js
-backup_file ~/.eslintrc
-ln -s ~/.macbootstrap/.eslintrc.js ~/.eslintrc.js
+#backup_file ~/.eslintrc.js
+#backup_file ~/.eslintrc
+#ln -s ~/.macbootstrap/.eslintrc.js ~/.eslintrc.js
 
 # Ranger configuration
 if [[ ! -e $HEME/.config/ranger ]]; then
@@ -137,7 +167,6 @@ ln -s ~/.macbootstrap/config/ranger/rc.conf "$old_rc_conf"
 
 unset ALL_PROXY
 ./install-steps/dependencies.after.sh
-./install-steps/sogou_sync.sh
 
 # ssh configuration
 backup_file ~/.ssh/config
@@ -147,6 +176,5 @@ fi
 ln -s ~/.macbootstrap/zsh-config/ssh_config ~/.ssh/config
 
 # Personal
-./install-steps/personal.sh
-./personal.sh
-
+#./install-steps/personal.sh
+#./personal.sh
