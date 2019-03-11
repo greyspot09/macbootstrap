@@ -1,4 +1,4 @@
-username='bestswifter'
+username='liucien'
 
 # Write script you want to use in the `if` block
 if [[ "$username" == $(whoami) ]]; then
@@ -6,8 +6,8 @@ if [[ "$username" == $(whoami) ]]; then
     brew cask install google-drive-file-stream
 
     # Git config
-    git config --global user.name bestswifter
-    git config --global user.email ktzhang@bestswifter.com
+    git config --global user.name hongmou.liu
+    git config --global user.email hongmou.liu@gmail.com
 
     if [[ ! -d $HOME/.ssh ]]; then
         mkdir $HOME/.ssh
@@ -32,16 +32,23 @@ if [[ "$username" == $(whoami) ]]; then
     git config --global user.signingkey 368B0D29D38D4B4EEE5BF51EB2468CF4358BF1CF
     git config --global commit.gpgsign true
 
-    # Install MindNode
-    if [[ -e /Applications/MindNode\ 2.app ]]; then
-        echo "You have installed MindNode"
+    if [[ ! -e /Applications/Xee³.app ]]; then
+        brew cask install xee
     else
-        if [[ ! -e $HOME/Downloads/MindNode.app.zip ]]; then
-            curl "http://app.bestswifter.com/MindNode501.app.zip" -o ~/Downloads/MindNode.app.zip
-        fi
+        echo "You have installed xee"
+    fi
 
-        echo "Install mindnode"
-        unzip -q $HOME/Downloads/MindNode.app.zip -d /Applications/MindNode\ 2.app
-        rm $HOME/Downloads/MindNode.app.zip
+    if [[ ! -e /Applications/Dropbox.app/ ]]; then
+        brew cask install dropbox
+    else
+        echo "You have installed dropbbox"
+    fi
+
+    # CodeRunner
+    # ---------------
+    if [[ ! -e /Applications/CodeRunner.app/ ]]; then
+        brew cask install coderunner
+    else
+        echo "You have installed coderunner"
     fi
 fi

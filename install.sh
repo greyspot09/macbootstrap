@@ -59,31 +59,6 @@ else
 fi
 
 
-if [[ ! -e /Applications/Xee³.app ]]; then
-    brew cask install xee
-else
-    echo "You have installed xee"
-fi
-
-if [[ ! -e /Applications/Dropbox.app/ ]]; then
-    brew cask install dropbox
-else
-    echo "You have installed dropbbox"
-fi
-
-
-
-# CodeRunner
-# ---------------
-if [[ ! -e /Applications/CodeRunner.app/ ]]; then
-    brew cask install coderunner
-else
-    echo "You have installed coderunner"
-fi
-
-
-
-
 
 if brew ls --versions gnu-sed > /dev/null; then
     echo "You have installed gsed"

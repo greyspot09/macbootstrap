@@ -13,37 +13,38 @@ brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json webpquicklook 
 brew cask install --appdir='/usr/local/bin' qlimagesize qlvideo # Avoid password
 
 # Zip tool
-brew cask install the-unarchiver
+
+if [[ ! -e "/Applications/The Unarchiver.app/" ]]; then
+    brew cask install the-unarchiver
+else 
+    echo "you have installed the-unarchiver"
+fi
 
 # Install applications
 # ---------------
 
 # Install Charles
-if [[ -e /Applications/Charles.app ]]; then
+if [[ ! -e /Applications/Charles.app ]]; then
     echo "You have installed Charles"
 else
-    if [[ ! -e $HOME/Downloads/Charles.app.zip ]]; then
-        curl "http://p2w4johvr.bkt.clouddn.com/Charles.app.zip" -o ~/Downloads/Charles.app.zip
-    fi
-
-    unzip -q $HOME/Downloads/Charles.app.zip -d /Applications
-    rm $HOME/Downloads/Charles.app.zip
+    brew cask install charles
 fi
 
 # Install Dash
-if [[ -e /Applications/Dash.app ]]; then
+if [[ ! -e /Applications/Dash.app ]]; then
     echo "You have installed Dash"
 else
-    if [[ ! -e $HOME/Downloads/Dash.app.zip ]]; then
-        curl "http://p2w4johvr.bkt.clouddn.com/Dash.app.zip" -o ~/Downloads/Dash.app.zip
-    fi
+    echo "may be future will install dash"
+    #if [[ ! -e $HOME/Downloads/Dash.app.zip ]]; then
+    #    curl "http://p2w4johvr.bkt.clouddn.com/Dash.app.zip" -o ~/Downloads/Dash.app.zip
+    #fi
 
-    unzip -q $HOME/Downloads/Dash.app.zip -d /Applications
-    rm $HOME/Downloads/Dash.app.zip
+    #unzip -q $HOME/Downloads/Dash.app.zip -d /Applications
+    #rm $HOME/Downloads/Dash.app.zip
 fi
 
 # Install Alfred
-if [[ -e "/Applications/Alfred 3.app" ]]; then
+if [[ ! -e "/Applications/Alfred 3.app" ]]; then
     echo "You have installed Alfred"
 else
     if [[ ! -e "$HOME/Library/Application Support/Alfred 3" ]]; then
@@ -63,17 +64,7 @@ else
 fi
 
 
-if [[ ! -e /Applications/Xee³.app ]]; then
-    brew cask install xee
-else
-    echo "You have installed xee"
-fi
 
-if [[ ! -e /Applications/Dropbox.app/ ]]; then
-    brew cask install dropbox
-else
-    echo "You have installed dropbbox"
-fi
 
 ##################################################
 #                                                #

@@ -1,4 +1,4 @@
-rm -rf ~/.macbootstrap/
+#rm -rf ~/.macbootstrap/
 rm -rf /Applications/MacVim.app/
 rm -rf /Applications/Snap.app/
 rm -f /usr/local/bin/gvim
@@ -30,11 +30,11 @@ brew uninstall exiftool
 brew uninstall git-lfs
 
 # npm clean
-npm uninstall -g gnomon
-npm uninstall -g vue-cli
-npm uninstall -g eslint-plugin-html
-npm uninstall -g sequelize-auto
-npm uninstall -g bash-language-server
+#npm uninstall -g gnomon
+#npm uninstall -g vue-cli
+#npm uninstall -g eslint-plugin-html
+#npm uninstall -g sequelize-auto
+#npm uninstall -g bash-language-server
 
 rm -f ~/.zshrc
 rm -f ~/.vimrc
