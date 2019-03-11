@@ -117,10 +117,19 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 ln -s ~/.macbootstrap/zsh-config/.zshrc ~/.zshrc
 
 # vim configuration
+backup_file ~/.gvimrc
+backup_file ~/.vimrc
 backup_file ~/.vim
-backup_file ~/.config/nvim/
-git clone https://github.com/bestswifter/vim-config.git ~/.config/nvim
-ln -s ~/.config/nvim ~/.vim
+backup_file ~/.config/vim
+#rm -rf ~/.vim
+#rm -rf ~/.config/vim
+#rm ~/.vimrc
+#rm ~/.gvimrc
+# vim 的配置需要安装时手动在vim中执行下BundleInstall
+git clone git@github.com:greyspot09/vim_config.git ~/.config/vim
+ln -s ~/.config/vim ~/.vim
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+ln -s ~/.vim/vimrc ~/.vimrc
 
 # ESLint configuration
 #backup_file ~/.eslintrc.js
