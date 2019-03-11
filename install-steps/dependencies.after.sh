@@ -16,7 +16,7 @@ brew cask install --appdir='/usr/local/bin' qlimagesize qlvideo # Avoid password
 
 if [[ ! -e "/Applications/The Unarchiver.app/" ]]; then
     brew cask install the-unarchiver
-else 
+else
     echo "you have installed the-unarchiver"
 fi
 
@@ -25,9 +25,9 @@ fi
 
 # Install Charles
 if [[ ! -e /Applications/Charles.app ]]; then
-    echo "You have installed Charles"
-else
     brew cask install charles
+else
+    echo "You have installed Charles"
 fi
 
 # Install Dash
@@ -45,11 +45,9 @@ fi
 
 # Install Alfred
 if [[ ! -e "/Applications/Alfred 3.app" ]]; then
-    echo "You have installed Alfred"
-else
-    if [[ ! -e "$HOME/Library/Application Support/Alfred 3" ]]; then
-        mkdir -p "$HOME/Library/Application Support/Alfred 3"
-    fi
+    #if [[ ! -e "$HOME/Library/Application Support/Alfred 3" ]]; then
+    #    mkdir -p "$HOME/Library/Application Support/Alfred 3"
+    #fi
 
     # patch alfred
     brew cask install alfred
@@ -61,6 +59,9 @@ else
     #curl http://p2w4johvr.bkt.clouddn.com/Alfred.alfredpreferences2.zip -o "$HOME/Downloads/Alfred.alfredpreferences.zip"
     #unzip -q "$HOME/Downloads/Alfred.alfredpreferences.zip" -d "$HOME/Library/Application Support/Alfred 3"
     #rm "$HOME/Downloads/Alfred.alfredpreferences.zip"
+else
+    echo "You have installed Alfred"
+
 fi
 
 
