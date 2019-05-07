@@ -45,3 +45,6 @@
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
+[user]
+	name = hongmou.liu
+	email = hongmou.liu@gmail.com

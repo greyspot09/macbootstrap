@@ -67,3 +67,27 @@ bindkey ';' autosuggest-execute
 #archey -o
 autoload -U bashcompinit
 bashcompinit
+
+
+alias vsc='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code';
+VSC_BIN='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin';
+PATH=$VSC_BIN:$PATH;
+export PATH;
+
+
+
+###################  以下代码修改zsh 粘贴很慢的问题 #################################
+# This speeds up pasting w/ autosuggest
+# https://github.com/zsh-users/zsh-autosuggestions/issues/238
+pasteinit() {
+  OLD_SELF_INSERT=${${(s.:.)widgets[self-insert]}[2,3]}
+  zle -N self-insert url-quote-magic # I wonder if you'd need `.url-quote-magic`?
+}
+
+pastefinish() {
+  zle -N self-insert $OLD_SELF_INSERT
+}
+zstyle :bracketed-paste-magic paste-init pasteinit
+zstyle :bracketed-paste-magic paste-finish pastefinish
+
+###################  以下代码修改zsh 粘贴很慢的问题 END #################################

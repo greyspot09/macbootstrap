@@ -160,5 +160,5 @@ fi
 ln -s ~/.macbootstrap/zsh-config/ssh_config ~/.ssh/config
 
 # Personal
-#./install-steps/personal.sh
+./install-steps/personal.sh
 #./personal.sh

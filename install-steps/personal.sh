@@ -14,23 +14,23 @@ if [[ "$username" == $(whoami) ]]; then
     fi
 
     # ssh key
-    if [[ ! -f $HOME/.ssh/id_rsa ]]; then
-        chmod 400 $HOME/.macbootstrap/config/id_rsa
-        ln -s $HOME/.macbootstrap/config/id_rsa $HOME/.ssh/
-    fi
+    #if [[ ! -f $HOME/.ssh/id_rsa ]]; then
+    #    chmod 400 $HOME/.macbootstrap/config/id_rsa
+    #    ln -s $HOME/.macbootstrap/config/id_rsa $HOME/.ssh/
+    #fi
 
-    if [[ ! -f $HOME/.ssh/id_rsa.pub ]]; then
-        ln -s $HOME/.macbootstrap/config/id_rsa.pub $HOME/.ssh/
-    fi
+    #if [[ ! -f $HOME/.ssh/id_rsa.pub ]]; then
+    #    ln -s $HOME/.macbootstrap/config/id_rsa.pub $HOME/.ssh/
+    #fi
 
     ssh-add -K $HOME/.ssh/id_rsa
 
     # GPG_KEY
     GPG_KEY="$HOME/.macbootstrap/git-config/bestswifter.asc"
-    gpg --import "$GPG_KEY"
-    shred --remove "$GPG_KEY"
-    git config --global user.signingkey 368B0D29D38D4B4EEE5BF51EB2468CF4358BF1CF
-    git config --global commit.gpgsign true
+    #gpg --import "$GPG_KEY"
+    #shred --remove "$GPG_KEY"
+    #git config --global user.signingkey 368B0D29D38D4B4EEE5BF51EB2468CF4358BF1CF
+    #git config --global commit.gpgsign true
 
     if [[ ! -e /Applications/Xee³.app ]]; then
         brew cask install xee

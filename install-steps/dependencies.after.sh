@@ -20,6 +20,15 @@ else
     echo "you have installed the-unarchiver"
 fi
 
+# Sql
+if [[ ! -e "/Applications/DB Browser for SQLite.app/" ]]; then
+    brew cask install db-browser-for-sqlite
+else
+    echo "you have installed DB Browser for SQLite"
+fi
+
+
+
 # Install applications
 # ---------------
 
