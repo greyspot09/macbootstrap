@@ -91,3 +91,13 @@ zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
 
 ###################  以下代码修改zsh 粘贴很慢的问题 END #################################
+
+################### Flutter ###################################################
+export PUB_HOSTED_URL=https://pub.flutter-io.cn
+export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
+################### Flutter End ###################################################
+
+
+################### frida ###################################################
+alias dump.py="/opt/dump/frida-ios-dump/dump.py"
+################### frida ###################################################

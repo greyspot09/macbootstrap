@@ -9,9 +9,9 @@ Host *
 	Compression yes
 
 Host bwh
-    HostName 172.96.215.73
+    HostName 198.181.43.6
     User root
-    Port 27850
+    Port 27848
     IdentityFile ~/.ssh/id_rsa
 
 Host pi
@@ -20,26 +20,8 @@ Host pi
     Port 22
     IdentityFile ~/.ssh/id_rsa
 
-Host qcloud
-    HostName 115.159.123.174
-    User root
-    Port 22
-    IdentityFile ~/.ssh/id_rsa
-
-Host dev
-    HostName 10.8.124.82
-    User zhangxingyu.bs
-    Port 22
-    IdentityFile ~/.ssh/id_rsa
-
-Host macpro
-    HostName 10.2.9.89
-    User iosarch
-    Port 22
-    IdentityFile ~/.ssh/id_rsa
-
-Host ies_mac_pro
-    HostName 10.1.0.59
-    User iesqa
+Host workdev
+    HostName 192.168.0.59
+    User st
     Port 22
     IdentityFile ~/.ssh/id_rsa
