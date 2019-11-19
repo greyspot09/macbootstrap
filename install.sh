@@ -58,7 +58,29 @@ else
     echo "You have installed vscode"
 fi
 
+if [[ ! -e /Applications/BaiduNetdisk_mac.app ]]; then
+    brew cask install baidunetdisk
+else
+    echo "You have installed baidunetdisk"
+fi
 
+if [[ ! -e /Applications/MacVim.app ]]; then
+    brew cask install MacVim
+else
+    echo "You have installed MacVim"
+fi
+
+if [[ ! -e /Applications/PDF\ Expert.app/ ]]; then
+    brew cask install pdf-expert
+else
+    echo "You have installed pdf-expert" 
+fi
+
+if [[ ! -e /Applications/ ]]; then
+    brew cask install baidunetdisk
+else
+    echo "You have installed baidunetdisk"
+fi
 
 if brew ls --versions gnu-sed > /dev/null; then
     echo "You have installed gsed"
