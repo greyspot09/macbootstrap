@@ -15,7 +15,7 @@
 只需要执行以下代码即可：
 
 ```shell
-curl https://raw.githubusercontent.com/bestswifter/macbootstrap/master/bootstrap.sh | sh
+curl https://raw.githubusercontent.com/greyspot09/macbootstrap/master/bootstrap.sh | sh
 ```
 
 这个命令会安装 `HomeBrew`，如果是全新的电脑还会安装 Xcode 命令行工具（包括 gcc 等），这是必须的，绝大多数命令行程序都依赖这个。如果安装失败，可以手动执行 `xcode-select --install` 命令。如果还是无法安装，需要去[苹果官网](https://developer.apple.com/download/more/)手动下载安装
@@ -49,9 +49,9 @@ sudo chown -R `whoami` /usr/local
 ```
 
 具体包含的工具，以及用法请参考: [HomeBrew 工具](./doc/tools.md)
- 
+
 ## Zsh
-   
+
 所有 Zsh 相关的函数、配置（主要是对一些 Unix 函数的封装）都在 `zsh-config` 目录下。
 
 入口文件是 `common.sh`，其中我个人的配置放在 `personalized.sh` 中，如果使用者不需要，可以删除这个文件。
