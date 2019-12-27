@@ -73,14 +73,47 @@ fi
 if [[ ! -e /Applications/PDF\ Expert.app/ ]]; then
     brew cask install pdf-expert
 else
-    echo "You have installed pdf-expert" 
+    echo "You have installed pdf-expert"
 fi
 
-if [[ ! -e /Applications/ ]]; then
+if [[ ! -e /Applications/Android\ Studio.app/ ]]; then
+    brew cask install android-studio
+else
+    echo "You have installed android-studio"
+fi
+
+if [[ ! -e /Applications/BaiduNetdisk_mac.app ]]; then
     brew cask install baidunetdisk
 else
     echo "You have installed baidunetdisk"
 fi
+
+if [[ ! -e /Applications/CheatSheet.app ]]; then
+    brew cask install baidunetdisk
+else
+    echo "You have installed CheatSheet"
+fi
+
+if [[ ! -e /Applications/iMazing.app ]]; then
+    brew cask install imazing
+else
+    echo "You have installed iMazing"
+fi
+
+if [[ ! -e /Applications/Bartender\ 3.app ]]; then
+    brew cask install bartender
+else
+    echo "You have installed bartender"
+fi
+
+if [[ ! -e /Applications/Dropbox.app ]]; then
+    brew cask install dropbox
+else
+    echo "You have installed dropbox"
+fi
+
+
+
 
 if brew ls --versions gnu-sed > /dev/null; then
     echo "You have installed gsed"
@@ -120,6 +153,9 @@ brew_install ranger                 #终端的文件管理器，客替换Finder
 #brew_install git-lfs
 brew_install libimobiledevice
 #$(brew --prefix)/opt/fzf/install --all
+
+brew install git-flow-avh           #git-flow
+brew install tig
 
 # link git config
 mv ~/.gitconfig ~/.gitconfig_backup
