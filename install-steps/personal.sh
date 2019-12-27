@@ -14,14 +14,14 @@ if [[ "$username" == $(whoami) ]]; then
     fi
 
     # ssh key
-    #if [[ ! -f $HOME/.ssh/id_rsa ]]; then
-    #    chmod 400 $HOME/.macbootstrap/config/id_rsa
-    #    ln -s $HOME/.macbootstrap/config/id_rsa $HOME/.ssh/
-    #fi
+    if [[ ! -f $HOME/.ssh/id_rsa ]]; then
+       chmod 400 $HOME/.macbootstrap/config/id_rsa
+       ln -s $HOME/.macbootstrap/config/id_rsa $HOME/.ssh/
+    fi
 
-    #if [[ ! -f $HOME/.ssh/id_rsa.pub ]]; then
-    #    ln -s $HOME/.macbootstrap/config/id_rsa.pub $HOME/.ssh/
-    #fi
+    if [[ ! -f $HOME/.ssh/id_rsa.pub ]]; then
+       ln -s $HOME/.macbootstrap/config/id_rsa.pub $HOME/.ssh/
+    fi
 
     ssh-add -K $HOME/.ssh/id_rsa
 
