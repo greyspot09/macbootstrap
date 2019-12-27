@@ -112,8 +112,8 @@ else
     echo "You have installed dropbox"
 fi
 
-
-
+brew tap homebrew/cask-fonts
+brew cask install font-fira-code
 
 if brew ls --versions gnu-sed > /dev/null; then
     echo "You have installed gsed"

@@ -121,3 +121,6 @@ rm -rf fonts
 
 ## hook login
 ./install-steps/hook_login.sh
+
+chsh -s /bin/zsh
+
