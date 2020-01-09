@@ -112,6 +112,12 @@ else
     echo "You have installed dropbox"
 fi
 
+if [[ ! -e /Applications/Dropbox.app ]]; then
+    brew cask install dropbox
+else
+    echo "You have installed dropbox"
+fi
+
 brew tap homebrew/cask-fonts
 brew cask install font-fira-code
 

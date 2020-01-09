@@ -59,7 +59,7 @@ if [[ ! -e "/Applications/Alfred 3.app" ]]; then
     #fi
 
     # patch alfred
-    brew cask install alfred
+    # brew cask install alfred
     #sudo codesign -f -d -s - "/Applications/Alfred 3.app/Contents/Frameworks/Alfred Framework.framework/Versions/A/Alfred Framework"
     #cp tools/alfred.license.plist "$HOME/Library/Application Support/Alfred 3/license.plist"
 
@@ -71,6 +71,12 @@ if [[ ! -e "/Applications/Alfred 3.app" ]]; then
 else
     echo "You have installed Alfred"
 
+fi
+
+if [[ ! -e /Applications/Jietu.app ]]; then
+    brew cask install Jietu
+else
+    echo "You have installed Jietu"
 fi
 
 
