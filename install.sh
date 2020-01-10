@@ -29,6 +29,7 @@ fi
 
 if [[ ! -e /Applications/SourceTree.app ]]; then
     brew cask install sourcetree
+    # echo "not installed SourceTree"
 else
     echo "You have installed SourceTree"
 fi
@@ -58,11 +59,6 @@ else
     echo "You have installed vscode"
 fi
 
-if [[ ! -e /Applications/BaiduNetdisk_mac.app ]]; then
-    brew cask install baidunetdisk
-else
-    echo "You have installed baidunetdisk"
-fi
 
 if [[ ! -e /Applications/MacVim.app ]]; then
     brew cask install MacVim
@@ -70,52 +66,12 @@ else
     echo "You have installed MacVim"
 fi
 
-if [[ ! -e /Applications/PDF\ Expert.app/ ]]; then
-    brew cask install pdf-expert
-else
-    echo "You have installed pdf-expert"
-fi
+
 
 if [[ ! -e /Applications/Android\ Studio.app/ ]]; then
     brew cask install android-studio
 else
     echo "You have installed android-studio"
-fi
-
-if [[ ! -e /Applications/BaiduNetdisk_mac.app ]]; then
-    brew cask install baidunetdisk
-else
-    echo "You have installed baidunetdisk"
-fi
-
-if [[ ! -e /Applications/CheatSheet.app ]]; then
-    brew cask install baidunetdisk
-else
-    echo "You have installed CheatSheet"
-fi
-
-if [[ ! -e /Applications/iMazing.app ]]; then
-    brew cask install imazing
-else
-    echo "You have installed iMazing"
-fi
-
-if [[ ! -e /Applications/Bartender\ 3.app ]]; then
-    brew cask install bartender
-else
-    echo "You have installed bartender"
-fi
-
-if [[ ! -e /Applications/Dropbox.app ]]; then
-    brew cask install dropbox
-else
-    echo "You have installed dropbox"
-fi
-
-if [[ ! -e /Applications/Dropbox.app ]]; then
-    brew cask install dropbox
-else
-    echo "You have installed dropbox"
 fi
 
 brew tap homebrew/cask-fonts

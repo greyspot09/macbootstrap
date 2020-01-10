@@ -46,8 +46,8 @@
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [user]
-	name = liuhongmou
-	email = 
+	name = hongmou.liu
+	email = hongmou.liu@gmail.com
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f

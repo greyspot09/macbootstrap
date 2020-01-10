@@ -29,59 +29,6 @@ fi
 
 
 
-# Install applications
-# ---------------
-
-# Install Charles
-if [[ ! -e /Applications/Charles.app ]]; then
-    brew cask install charles
-else
-    echo "You have installed Charles"
-fi
-
-# Install Dash
-if [[ ! -e /Applications/Dash.app ]]; then
-    echo "You have installed Dash"
-else
-    echo "may be future will install dash"
-    #if [[ ! -e $HOME/Downloads/Dash.app.zip ]]; then
-    #    curl "http://p2w4johvr.bkt.clouddn.com/Dash.app.zip" -o ~/Downloads/Dash.app.zip
-    #fi
-
-    #unzip -q $HOME/Downloads/Dash.app.zip -d /Applications
-    #rm $HOME/Downloads/Dash.app.zip
-fi
-
-# Install Alfred
-if [[ ! -e "/Applications/Alfred 3.app" ]]; then
-    #if [[ ! -e "$HOME/Library/Application Support/Alfred 3" ]]; then
-    #    mkdir -p "$HOME/Library/Application Support/Alfred 3"
-    #fi
-
-    # patch alfred
-    # brew cask install alfred
-    #sudo codesign -f -d -s - "/Applications/Alfred 3.app/Contents/Frameworks/Alfred Framework.framework/Versions/A/Alfred Framework"
-    #cp tools/alfred.license.plist "$HOME/Library/Application Support/Alfred 3/license.plist"
-
-    ## sync configuration
-    #rm -rf "$HOME/Library/Application Support/Alfred 3/Alfred.alfredpreferences"
-    #curl http://p2w4johvr.bkt.clouddn.com/Alfred.alfredpreferences2.zip -o "$HOME/Downloads/Alfred.alfredpreferences.zip"
-    #unzip -q "$HOME/Downloads/Alfred.alfredpreferences.zip" -d "$HOME/Library/Application Support/Alfred 3"
-    #rm "$HOME/Downloads/Alfred.alfredpreferences.zip"
-else
-    echo "You have installed Alfred"
-
-fi
-
-if [[ ! -e /Applications/Jietu.app ]]; then
-    brew cask install Jietu
-else
-    echo "You have installed Jietu"
-fi
-
-
-
-
 ##################################################
 #                                                #
 #                                                #
