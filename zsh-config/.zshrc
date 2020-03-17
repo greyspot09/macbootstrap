@@ -101,3 +101,9 @@ export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 ################### frida ###################################################
 alias dump.py="/opt/dump/frida-ios-dump/dump.py"
 ################### frida ###################################################
+
+################### Android Home ###################################################
+export ANDROID_HOME=/Users/liucien/Library/Android/sdk
+export PATH=${PATH}:${ANDROID_HOME}/tools
+export PATH=${PATH}:${ANDROID_HOME}/platform-tools
+################### Android Home End ###################################################
