@@ -95,6 +95,7 @@ zstyle :bracketed-paste-magic paste-finish pastefinish
 ################### Flutter ###################################################
 export PUB_HOSTED_URL=https://pub.flutter-io.cn
 export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
+export PATH=~/flutter/bin:$PATH
 ################### Flutter End ###################################################
 
 
@@ -106,4 +107,16 @@ alias dump.py="/opt/dump/frida-ios-dump/dump.py"
 export ANDROID_HOME=/Users/liucien/Library/Android/sdk
 export PATH=${PATH}:${ANDROID_HOME}/tools
 export PATH=${PATH}:${ANDROID_HOME}/platform-tools
+
+export ANDROID_SDK=/Users/liucien/Library/Android/sdk
+export ANDROID_NDK=/Users/liucien/Library/Android/ndk/android-ndk-r16b
+
+export PATH=${PATH}:$ANDROID_NDK/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64/bin/
 ################### Android Home End ###################################################
+
+
+################### Go Home ###################################################
+export GOPATH=$HOME/go
+################### Go Home End ###################################################
+
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
