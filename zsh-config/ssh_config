@@ -25,3 +25,20 @@ Host workdev
     User st
     Port 22
     IdentityFile ~/.ssh/id_rsa
+
+Host jailbreak_ios
+	HostName 127.0.0.1
+	Port 4567
+	User root
+
+Host ubuntu16
+	HostName 192.168.1.5
+	User liucien
+
+Host ubuntu16_root
+	HostName 192.168.1.5
+	User root
+
+Host 192.168.1.253
+	HostName 192.168.1.253
+	User root
